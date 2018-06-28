@@ -1,6 +1,10 @@
+
 #define variables
 list = []
+from pynput.keyboard import Key, Controller
 
+
+keyboard = Controller()
 #use colorama to import colours for easier use
 for number in range(10):
     if number == 1 or number == 3:
@@ -26,7 +30,10 @@ def print_board(board):
         print (" ".join(row))
 
 
-#def process_input():
+#keyboard.press(Key.space)
+#keyboard.release(Key.space)
+#keyboard.press('a')
+#keyboard.release('a')
 
 while True:
     print_board(list)
@@ -79,6 +86,10 @@ while True:
 
 
 
+
+#array = [list1, list2,list3,list4,list5,list6,list7,list8]
+#print in terminal
+#'a'+str(1)
 
 #whatever you put inside is printed to the console
 #var = input()
