@@ -1,6 +1,8 @@
+
 #define variables
 board = []
 possible_moves = []
+
 
 #use colorama to import colours for easier use
 for number in range(10):
@@ -27,7 +29,6 @@ def print_board(board):
         print (" ".join(row))
 
 
-#def process_input():
 
 while True:
     print_board(board)
@@ -82,6 +83,10 @@ while True:
 
 
 
+
+#array = [list1, list2,list3,list4,list5,list6,list7,list8]
+#print in terminal
+#'a'+str(1)
 
 #whatever you put inside is printed to the console
 #var = input()
