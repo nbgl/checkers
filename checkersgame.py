@@ -1,8 +1,6 @@
 #define variables
 list = []
 
-
-
 #use colorama to import colours for easier use
 for number in range(1,9):
     if number == 1 or number == 3:
@@ -21,19 +19,60 @@ def print_board(board):
     for row in testboard:
         for index in range(8):
             if row[index] == None:
-                row[index] = 'Na'
+                row[index] = '--'
         print (" ".join(row))
 
 print_board(list)
 
+#def process_input():
+
+while True:
+    coordIn = input('Enter the coordinates of which piece you would like to move:')
+    #check if it is possible to move it first - not surrounded / blocked by other pieces
+    x1Coord = coordIn[0]
+    y1Coord = coordIn[-1]
+    print (x1Coord)
+    print(y1Coord)
+    if list[y1Coord][x1Coord] != None and list[y1Coord][x1Coord] != 'BO':
+        if list[y1Coord-1][x1Coord-1] = None:
+            list.append([list[y1Coord-1][x1Coord-1]])
+        elif list[y1Coord-1][x1Coord+1] = None:
+            list.append([list[y1Coord-1][x1Coord+1]])
+        elif list[y1Coord+1][x1Coord-1] = None:
+            list.append([list[y1Coord+1][x1Coord-1]])
+        elif list[y1Coord+1][x1Coord+1] = None:
+            list.append([list[y1Coord+1][x1Coord+1]])
+        else:
+            print('Error - try again')
+            continue
+    #remember
+    if [x1Coord] = 7
+
+
+    if
+
+
+
+#board[BoardIndex][ListIndex]
+coordOut = input('Enter where you would like to move it: ')
+x2Coord = coordIn[0]
+y2Coord = coordIn[-1]
+print (x2Coord)
+print(y2Coord)
+#check if it is possible to move it to that area
+print('Moved', coordIn,'to', coordOut)
 
 
 
 
+#whatever you put inside is printed to the console
+#var = input()
+#set variable equal to input
+#enter commands after this
 
-#array = [list1, list2,list3,list4,list5,list6,list7,list8]
-#print in terminal
-#'a'+str(1)
+
+
+
 
 
 
