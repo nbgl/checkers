@@ -1,8 +1,10 @@
+
 #define variables
 list = []
+from pynput.keyboard import Key, Controller
 
 
-
+keyboard = Controller()
 #use colorama to import colours for easier use
 for number in range(1,9):
     if number == 1 or number == 3:
@@ -25,6 +27,11 @@ def print_board(board):
         print (" ".join(row))
 
 print_board(list)
+
+#keyboard.press(Key.space)
+#keyboard.release(Key.space)
+#keyboard.press('a')
+#keyboard.release('a')
 
 
 
