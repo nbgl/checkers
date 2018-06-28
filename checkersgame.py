@@ -72,6 +72,8 @@ while True:
         print('Error - try again')
         continue
 
+    list[yPossibleCoord][xPossibleCoord] = "WO"
+    list[y1Coord][x1Coord] = None
 
     print('Moved', coordIn,'to', coordOut)
     #insert AI's move
