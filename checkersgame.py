@@ -68,22 +68,25 @@ while True:
     #check if it is possible to move it to that area
     xPossibleCoord = int(x2Coord)
     yPossibleCoord = int(y2Coord)
+    if x1Coord != xPossibleCoord and y1Coord != yPossibleCoord:
+        if board[yPossibleCoord][xPossibleCoord] == 'BO':
+            if board[y1Coord+1][x2Coord-1] == None:
+                possible_moves.append([possible_moves[y2Coord+1][x2Coord-1]])
+            elif board[y2Coord+1][x2Coord+1] == None:
+                possible_moves.append([possible_moves[y2Coord+1][x2Coord+1]])
 
-    if board[yPossibleCoord][xPossibleCoord] == 'BO':
-        if board[y1Coord+1][x2Coord-1] == None:
-            possible_moves.append([possible_moves[y2Coord+1][x2Coord-1]])
-        elif board[y2Coord+1][x2Coord+1] == None:
-            possible_moves.append([possible_moves[y2Coord+1][x2Coord+1]])
+        elif board[yPossibleCoord][xPossibleCoord] == None:
+            board[yPossibleCoord][xPossibleCoord] = "WO"
+            #depending on where you have moved, check if you jumped two spaces up or two spaces down in either direction (killed an enemy)
+            #if you have, set the possiblecoords to None
 
-    elif board[yPossibleCoord][xPossibleCoord] == None:
-        board[yPossibleCoord][xPossibleCoord] = "WO"
-        #depending on where you have moved, check if you jumped two spaces up or two spaces down in either direction (killed an enemy)
-        #if you have, set the possiblecoords to None
-
-        board[y1Coord][x1Coord] = None
+            board[y1Coord][x1Coord] = None
 
 
-        print('Moved', coordIn,'to', coordOut)
+            print('Moved', coordIn,'to', coordOut)
+        else:
+            print('Error - try again')
+            continue
     else:
         print('Error - try again')
         continue
