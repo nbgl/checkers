@@ -52,9 +52,9 @@ while True:
     print (y1Coord)
     if board[y1Coord][x1Coord] == 'WO':
         if board[y1Coord+1][x1Coord-1] == None:
-            surrounding.append([board[y1Coord+1][x1Coord-1]])
+            surrounding.append(board[y1Coord+1][x1Coord-1])
         elif board[y1Coord+1][x1Coord+1] == None:
-            surrounding.append([board[y1Coord+1][x1Coord+1]])
+            surrounding.append(board[y1Coord+1][x1Coord+1])
     else:
         print('Error - try again')
         continue
@@ -71,9 +71,9 @@ while True:
     if x1Coord != xPossibleCoord and y1Coord != yPossibleCoord and abs(x1Coord - xPossibleCoord) == 1 and abs(y1Coord - yPossibleCoord) == 1:
         if board[yPossibleCoord][xPossibleCoord] == 'BO':
             if board[y1Coord+1][x2Coord-1] == None:
-                possible_moves.append([possible_moves[y2Coord+1][x2Coord-1]])
+                possible_moves.append(board[y2Coord+1][x2Coord-1])
             elif board[y2Coord+1][x2Coord+1] == None:
-                possible_moves.append([possible_moves[y2Coord+1][x2Coord+1]])
+                possible_moves.append(board[y2Coord+1][x2Coord+1])
 
         elif board[yPossibleCoord][xPossibleCoord] == None:
             board[yPossibleCoord][xPossibleCoord] = "WO"
