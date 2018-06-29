@@ -1,12 +1,34 @@
 
 #define variables
 list = []
+from termcolor import cprint, colored
+#cprint(colored("Hello", "grey", "on_white"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #use colorama to import colours for easier use
 for number in range(10):
     if number == 1 or number == 3:
         list.append(['=',None,'BO',None,'BO',None,'BO',None,'BO','='])
+
     elif number == 7:
         list.append(['=',None,'WO',None,'WO',None,'WO',None,'WO','='])
     elif number == 2:
@@ -25,8 +47,12 @@ def print_board(board):
         for index in range(9):
             if row[index] == None:
                 row[index] = '--'
-        print (" ".join(row))
-
+            elif row[index] == "WO":
+                row[index] = colored("WO", "red")
+            elif row[index] == "BO":
+                row[index] = colored("BO", "yellow")
+    for row in testboard:
+        print (' '.join(row))
 
 
 while True:
@@ -72,6 +98,8 @@ while True:
     else:
         print('Error - try again')
         continue
+
+
 
     list[yPossibleCoord][xPossibleCoord] = "WO"
     list[y1Coord][x1Coord] = None
