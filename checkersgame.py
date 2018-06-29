@@ -99,6 +99,9 @@ while True:
                 else:
                     print('Error - try again')
                     continue
+            else:
+                print('Error - try again')
+                continue
 
         else:
             print('Error - try again')
