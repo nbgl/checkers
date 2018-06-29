@@ -100,9 +100,6 @@ while True:
         continue
     #insert AI
 
-    list[yPossibleCoord][xPossibleCoord] = "WO"
-    list[y1Coord][x1Coord] = None
-
 
 
 
