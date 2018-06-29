@@ -3,6 +3,9 @@ from copy import deepcopy
 
 
 #define variables
+list = []
+from termcolor import cprint, colored
+#cprint(colored("Hello", "grey", "on_white"))
 board = []
 possible_moves = []
 surrounding =[]
@@ -38,7 +41,12 @@ def print_board(board):
         for index in range(9):
             if row[index] == None:
                 row[index] = '--'
-        print (" ".join(row))
+            elif row[index] == "WO":
+                row[index] = colored("WO", "red")
+            elif row[index] == "BO":
+                row[index] = colored("BO", "yellow")
+    for row in testboard:
+        print (' '.join(row))
 
 
 #insert bigger loop for AI
@@ -92,6 +100,8 @@ while True:
         continue
     #insert AI
 
+    list[yPossibleCoord][xPossibleCoord] = "WO"
+    list[y1Coord][x1Coord] = None
 
 
 
