@@ -77,15 +77,11 @@ while True:
     yPossibleCoord = int(y2Coord)
     if x1Coord != xPossibleCoord and y1Coord != yPossibleCoord:
         if board[yPossibleCoord][xPossibleCoord] == 'BO':
-            if board[y2Coord-1][x2Coord-1] == None or board[y2Coord-1][x2Coord+1] == None:
-                board[yPossibleCoord][xPossibleCoord] = "WO"
-                        #depending on where you have moved, check if you jumped two spaces up or two spaces down in either direction (killed an enemy)
-                        #if you have, set the possiblecoords to None
+            board[yPossibleCoord][xPossibleCoord] = "WO"
+                    #depending on where you have moved, check if you jumped two spaces up or two spaces down in either direction (killed an enemy)
+                    #if you have, set the possiblecoords to None
 
-                board[y1Coord][x1Coord] = None
-            else:
-                print('Error - try again')
-                continue
+            board[y1Coord][x1Coord] = None
         elif abs(x1Coord - xPossibleCoord) == 1 and abs(y1Coord - yPossibleCoord) == 1:
 
             if board[yPossibleCoord][xPossibleCoord] == None:
