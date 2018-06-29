@@ -68,7 +68,7 @@ while True:
     #check if it is possible to move it to that area
     xPossibleCoord = int(x2Coord)
     yPossibleCoord = int(y2Coord)
-    if x1Coord != xPossibleCoord and y1Coord != yPossibleCoord:
+    if x1Coord != xPossibleCoord and y1Coord != yPossibleCoord and abs(x1Coord - xPossibleCoord) == 1 and abs(y1Coord - yPossibleCoord) == 1:
         if board[yPossibleCoord][xPossibleCoord] == 'BO':
             if board[y1Coord+1][x2Coord-1] == None:
                 possible_moves.append([possible_moves[y2Coord+1][x2Coord-1]])
